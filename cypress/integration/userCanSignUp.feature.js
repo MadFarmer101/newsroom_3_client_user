@@ -17,13 +17,13 @@ describe("user can Sign up for an account", () => {
 
   it("user can register for an account", () => {
     cy.get("#category-header");
-    cy.get("#sign-up").click();
+    cy.get("#signup-button").click();
     cy.get("#sign-up-form").within(() => {
       cy.get("#email").type("johndoe@gmail.com");
       cy.get("#password").type("password");
       cy.get("#passwordconfirmation").type("password");
     
-      cy.get("#signup-button").click();
+      cy.get("#sign-up-button").click();
       
     });
     cy.get("#signed-up-message").should("contain", "Hi, johndoe!");
@@ -51,13 +51,13 @@ describe("user cannot Sign up with invalid credentials", () => {
   });
   it("user cannot register with invalid email", () => {
     cy.get("#category-header");
-    cy.get("#sign-up").click();
+    cy.get("#signup-button").click();
     cy.get("#sign-up-form").within(() => {
       cy.get("#email").type("usermail.com");
       cy.get("#password").type("password");
       cy.get("#passwordconfirmation").type("password");
       
-      cy.get("#signup-button").click();
+      cy.get("#sign-up-button").click();
       
     });
     cy.get("#signed-up-message").should("not.exist");
@@ -66,12 +66,12 @@ describe("user cannot Sign up with invalid credentials", () => {
   });
   it("user cannot sign up if password and password confirmation doesn´t match", () => {
     cy.get("#category-header");
-    cy.get("#sign-up").click();
+    cy.get("#signup-button").click();
     cy.get("#sign-up-form").within(() => {
       cy.get("#email").type("johndoe@gmail.com");
       cy.get("#password").type("passord");
       cy.get("#passwordconfirmation").type("password");
-      cy.get("#signup-button").click();
+      cy.get("#sign-up-button").click();
       
     });
     cy.get("#signed-up-message").should("not.exist");

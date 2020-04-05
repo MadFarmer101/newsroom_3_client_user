@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { SHOW_SUBSCRIPTION_FORM } from "../state/actions/actionTypes";
 import {
   SHOW_LOGIN_FORM,
-  SHOW_SIGN_UP_FORM
+  SHOW_SIGN_UP_FORM,
 } from "../state/actions/actionTypes";
-const RestrictedContent = props => {
+const RestrictedContent = (props) => {
   let article = props.singleArticle;
 
   let shortContent = article.content.substring(0, 20) + "...";
@@ -19,10 +19,12 @@ const RestrictedContent = props => {
           subscribe.
         </p>
         <button
+          id="buy-button"
+          class="ui blue inverted button"
           onClick={() =>
             props.dispatch({
               type: SHOW_SUBSCRIPTION_FORM,
-              payload: { showForm: true }
+              payload: { showForm: true },
             })
           }
         >
@@ -30,35 +32,37 @@ const RestrictedContent = props => {
         </button>
       </>
     ) : (
-        <>
-          <p>
-            This is premium article. If you want to subscribe, you need to be a
-            registered user
+      <>
+        <p>
+          This is premium article. If you want to subscribe, you need to be a
+          registered user
         </p>
-          <button
-            id="signup-button"
-            onClick={() =>
-              props.dispatch({
-                type: SHOW_SIGN_UP_FORM,
-                payload: { showSignUpForm: true, showLoginForm: false }
-              })
-            }
-          >
-            Sign Up
+        <button
+          id="signup-article-button"
+          class="ui blue inverted button"
+          onClick={() =>
+            props.dispatch({
+              type: SHOW_SIGN_UP_FORM,
+              payload: { showSignUpForm: true, showLoginForm: false },
+            })
+          }
+        >
+          Sign Up
         </button>
-          <button
-            id="login-button"
-            onClick={() =>
-              props.dispatch({
-                type: SHOW_LOGIN_FORM,
-                payload: { showLoginForm: true, showSignUpForm: false }
-              })
-            }
-          >
-            Login
+        <button
+          id="login-article-button"
+          class="ui blue inverted button"
+          onClick={() =>
+            props.dispatch({
+              type: SHOW_LOGIN_FORM,
+              payload: { showLoginForm: true, showSignUpForm: false },
+            })
+          }
+        >
+          Login
         </button>
-        </>
-      );
+      </>
+    );
 
   return (
     <>
@@ -68,10 +72,10 @@ const RestrictedContent = props => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     singleArticle: state.singleArticle,
-    currentUser: state.currentUser
+    currentUser: state.currentUser,
   };
 };
 

@@ -6,26 +6,23 @@ import {
   SELECT_CATEGORY,
   LOGOUT,
   SHOW_LOGIN_FORM,
-  SHOW_SIGN_UP_FORM
+  SHOW_SIGN_UP_FORM,
 } from "../state/actions/actionTypes";
 import { Link } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
-import i18n from '../i18n';
-import  logo from "../assets/logo.png";
-import mars from "../assets/mars.png"
+import { useTranslation } from "react-i18next";
+import i18n from "../i18n";
+import logo from "../assets/logo.png";
 
-
-
-const CategoryHeader = props => {
-  const { t } = useTranslation()
-  const edition = useSelector(state => state.session.edition)
-  const handleItemClick = event => {
+const CategoryHeader = (props) => {
+  const { t } = useTranslation();
+  const edition = useSelector((state) => state.session.edition);
+  const handleItemClick = (event) => {
     props.dispatch({
       type: SELECT_CATEGORY,
       payload: {
         selectedCategory: event.target.id,
-        activeItem: event.target.active
-      }
+        activeItem: event.target.active,
+      },
     });
   };
   let currentUser = props.currentUser;
@@ -39,130 +36,134 @@ const CategoryHeader = props => {
           onClick={() =>
             props.dispatch({
               type: LOGOUT,
-              payload: { authenticated: false, currentUser: {} }
+              payload: { authenticated: false, currentUser: {} },
             })
           }
         >
-          {t('Log out')}
+          {t("Log out")}
         </button>
       </>
     ) : (
-        <>
-          <button
-            class="ui secondary button"
-            id="signup-button"
-            onClick={() =>
-              props.dispatch({
-                type: SHOW_SIGN_UP_FORM,
-                payload: { showSignUpForm: true, showLoginForm: false }
-              })
-            }
-          >
-            {t('Sign up')}
-          </button>
-          <button
-            class="ui secondary button"
-            id="login-button"
-            onClick={() =>
-              props.dispatch({
-                type: SHOW_LOGIN_FORM,
-                payload: { showLoginForm: true, showSignUpForm: false }
-              })
-            }
-          >
-            {t('Login')}
-          </button>
-        </>
-      );
+      <>
+        <button
+          class="ui secondary button"
+          id="signup-button"
+          onClick={() =>
+            props.dispatch({
+              type: SHOW_SIGN_UP_FORM,
+              payload: { showSignUpForm: true, showLoginForm: false },
+            })
+          }
+        >
+          {t("Sign up")}
+        </button>
+        <button
+          class="ui secondary button"
+          id="login-button"
+          onClick={() =>
+            props.dispatch({
+              type: SHOW_LOGIN_FORM,
+              payload: { showLoginForm: true, showSignUpForm: false },
+            })
+          }
+        >
+          {t("Login")}
+        </button>
+      </>
+    );
 
   return (
     <>
-    <img id="logo" src={logo} alt="logo" />
-    <img id="mars" src={mars} alt="mars" />
-    <Segment inverted>
-      <Menu id="category-header" inverted pointing secondary>
-        <Menu.Item
-          name="home"
-          id="link"
-          as={Link}
-          to={{ pathname: "/" }}
-          active={props.activeItem === "all"}
-          onClick={handleItemClick}
-        >{t('Home')}</Menu.Item>
-        <Menu.Item
-          name="latest_news"
-          id="link"
-          as={Link}
-          to={{ pathname: "/latest_news" }}
-          active={props.activeItem === "latest_news"}
-          onClick={handleItemClick}
-        >
-          {t('Latest News')}
-        </Menu.Item>
-        <Menu.Item
-          name="tech"
-          id="link"
-          as={Link}
-          to={{ pathname: "/tech" }}
-          active={props.activeItem === "tech"}
-          onClick={handleItemClick}
-        >
-          {t('Tech')}
-        </Menu.Item>
-        <Menu.Item
-          name="sports"
-          id="link"
-          as={Link}
-          to={{ pathname: "/sports" }}
-          active={props.activeItem === "sports"}
-          onClick={handleItemClick}
-        >
-          {t('Sports')}
-        </Menu.Item>
-        <Menu.Item
-          name="politics"
-          id="link"
-          as={Link}
-          to={{ pathname: "/politics" }}
-          active={props.activeItem === "politics"}
-          onClick={handleItemClick}
-        >
-          {t('Politics')}
-        </Menu.Item>
-        <Menu.Item
-          name="culture"
-          id="link"
-          as={Link}
-          to={{ pathname: "/culture" }}
-          active={props.activeItem === "culture"}
-          onClick={handleItemClick}
-        >
-          {t('Culture')}
-        </Menu.Item>
-    
-        {switchLoginAndLogOut}
-        <Menu.Item id="languages" onClick={() => i18n.changeLanguage('en')}>EN</Menu.Item>
-        <Menu.Item id="languages" onClick={() => i18n.changeLanguage('sv')}>SV</Menu.Item>
-        <Menu.Item
-          name="edition"
-          id="editionlink"
-          as={Link}
-          to={{ pathname: "/edition" }}
-          active={props.activeItem === "edition"}
-          onClick={handleItemClick}
-        >
-          {edition && `${edition} Edition`}
-        </Menu.Item>
+      <img id="logo" src={logo} alt="logo" />
+      <Segment inverted>
+        <Menu id="category-header" inverted pointing secondary>
+          <Menu.Item
+            name="home"
+            id="home"
+            as={Link}
+            to={{ pathname: "/" }}
+            active={props.activeItem === "all"}
+            onClick={handleItemClick}
+          >
+            {t("Home")}
+          </Menu.Item>
+          <Menu.Item
+            name="latest_news"
+            id="latest-news"
+            as={Link}
+            to={{ pathname: "/latest_news" }}
+            active={props.activeItem === "latest_news"}
+            onClick={handleItemClick}
+          >
+            {t("Latest News")}
+          </Menu.Item>
+          <Menu.Item
+            name="tech"
+            id="tech"
+            as={Link}
+            to={{ pathname: "/tech" }}
+            active={props.activeItem === "tech"}
+            onClick={handleItemClick}
+          >
+            {t("Tech")}
+          </Menu.Item>
+          <Menu.Item
+            name="sports"
+            id="sports"
+            as={Link}
+            to={{ pathname: "/sports" }}
+            active={props.activeItem === "sports"}
+            onClick={handleItemClick}
+          >
+            {t("Sports")}
+          </Menu.Item>
+          <Menu.Item
+            name="politics"
+            id="politics"
+            as={Link}
+            to={{ pathname: "/politics" }}
+            active={props.activeItem === "politics"}
+            onClick={handleItemClick}
+          >
+            {t("Politics")}
+          </Menu.Item>
+          <Menu.Item
+            name="culture"
+            id="culture"
+            as={Link}
+            to={{ pathname: "/culture" }}
+            active={props.activeItem === "culture"}
+            onClick={handleItemClick}
+          >
+            {t("Culture")}
+          </Menu.Item>
 
-      </Menu>
-    </Segment>
+          {switchLoginAndLogOut}
+          <Menu.Item id="languages" onClick={() => i18n.changeLanguage("en")}>
+            EN
+          </Menu.Item>
+          <Menu.Item id="languages" onClick={() => i18n.changeLanguage("sv")}>
+            SV
+          </Menu.Item>
+          <Menu.Item
+            name="edition"
+            id="editionlink"
+            as={Link}
+            to={{ pathname: "/edition" }}
+            active={props.activeItem === "edition"}
+            onClick={handleItemClick}
+          >
+            {edition && `${edition} Edition`}
+          </Menu.Item>
+        </Menu>
+      </Segment>
     </>
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    currentUser: state.currentUser
+    currentUser: state.currentUser,
   };
 };
 

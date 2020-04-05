@@ -32,7 +32,7 @@ const DisplayArticles = (props) => {
           <div class="content">
           <div class="header" id="title">{article.title}</div>
           <div class="meta" id="snippet">{article.snippet}</div>
-          <button class="ui button"
+          <button class="ui blue inverted button"
             id="open-article"
             onClick={() => showArticle(article.id)}
             key={article.id}
