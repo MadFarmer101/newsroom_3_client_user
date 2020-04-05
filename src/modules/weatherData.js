@@ -1,14 +1,12 @@
 import axios from "axios";
-import {connect} from 'react-redux'
 
-
-const weatherData = async coords => {
+const weatherData = async (position) => {
+  // debugger
   try {
     let token = "0c1b30324a585f4c8276c8a2e1189a84";
     let response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${coords[0]}&lon=${coords[1]}&APPID=${token}`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${position[0]}&lon=${position[1]}&APPID=${token}`
     );
-    debugger
     return response.data;
   } catch (error) {
     return error;
@@ -16,4 +14,4 @@ const weatherData = async coords => {
 };
 
 
-export default connect()(weatherData);
+export {weatherData};
