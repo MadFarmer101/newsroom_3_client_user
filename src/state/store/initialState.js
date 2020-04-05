@@ -12,10 +12,10 @@ const initialState = {
   welcomeMessage: "",
   showSignUpForm: false,
   session: { edition: undefined },
-  localCity: "Gothenburg",
-  localtemperature: "",
-  latitude: 11.97,
-  longitude: 57.7
+  city: undefined,
+  weather: undefined,
+  temp: undefined
+ 
 };
 
 export default initialState;

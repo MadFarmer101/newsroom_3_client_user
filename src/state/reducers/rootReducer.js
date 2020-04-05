@@ -6,7 +6,7 @@ const rootReducer = (state = initialState, action) => {
     case actionTypes.GET_ARTICLE_DATA:
       return {
         ...state,
-        ...action.payload
+        ...action.payload,
       };
 
     case actionTypes.GET_SINGLE_ARTICLE_DATA:
@@ -16,14 +16,14 @@ const rootReducer = (state = initialState, action) => {
         articleList: false,
         showForm: false,
         flashMessage: false,
-        welcomeMessage: false
+        welcomeMessage: false,
       };
 
     case actionTypes.BACK_TO_ARTICLES_LIST:
       return {
         ...state,
         singleArticle: undefined,
-        articleList: true
+        articleList: true,
       };
 
     case actionTypes.SELECT_CATEGORY:
@@ -33,52 +33,59 @@ const rootReducer = (state = initialState, action) => {
         activeItem: action.payload,
         singleArticle: undefined,
         articleList: true,
-        flashMessage: false
+        flashMessage: false,
       };
     case actionTypes.AUTHENTICATE:
       return {
         ...state,
         authenticated: true,
-        currentUser: action.payload.currentUser
+        currentUser: action.payload.currentUser,
       };
 
     case actionTypes.SHOW_SUBSCRIPTION_FORM:
       return {
         ...state,
         ...action.payload,
-        articleList: false
+        articleList: false,
       };
 
     case actionTypes.FLASH_MESSAGE:
       return {
         ...state,
-        ...action.payload
+        ...action.payload,
       };
 
     case actionTypes.SHOW_LOGIN_FORM:
       return {
         ...state,
-        ...action.payload
+        ...action.payload,
       };
 
     case actionTypes.LOGOUT:
       return {
         ...state,
         ...action.payload,
-        showLoginForm: false
+        showLoginForm: false,
       };
 
     case actionTypes.SHOW_SIGN_UP_FORM:
       return {
         ...state,
-        ...action.payload
-      }
+        ...action.payload,
+      };
 
-      case "SET_CURRENT_SESSION":
+    case actionTypes.SET_CURRENT_SESSION:
+      return {
+        ...state,
+        ...action.payload
+      };
+      case actionTypes.SET_WEATHER:
         return {
-          ...state, 
-          ...action.payload
-        }
+          ...state,
+          city: action.payload.city,
+          weather: action.payload.weather,
+          temp: action.payload.temp
+        };
 
     default:
       return state;

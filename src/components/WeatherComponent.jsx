@@ -1,55 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React from "react";
 import { Menu, Segment } from "semantic-ui-react";
-import { connect, useDispatch } from "react-redux";
-import { SET_CURRENT_LOCATION } from "../state/actions/actionTypes";
-import {weatherData} from "../modules/weatherData"
+import { connect, useSelector } from "react-redux";
 
-const WeatherComponent = (props) => {
-const [position, setPosition] = useState([])
-const [city, setCity] = useState("")
-const [description, setDescription] = useState("")
+const WeatherComponent = props => {
+  let city = useSelector((state) => state.city);
+  let weather = useSelector((state) => state.weather);
+  let temp = useSelector((state) => state.temp);
 
-useEffect(() => {
-  getPosition()
-}, [])
-useEffect(() => {
-  getWeather()
-}, [])
-const getWeather = async () => {
-  let weather = await weatherData(position);
-  if (weather.status === 200) {
-    setCity(weather.name)
-    setDescription(weather.weather[0].decription)
-  }
-}
-const getPosition = () => {
-  
-  navigator.geolocation.getCurrentPosition( (pos) => {
-    debugger
-  setPosition([pos.coords.latitude, pos.coords.longitude])
+  let celsius = (parseFloat(temp - 273.15).toFixed(1))
 
-  })
-}
-
-return (
-
-  <Segment>
-    <Menu id="weather-header">
-      <Menu.Item id="city" >{city}</Menu.Item>
-      <Menu.Item id="temperature" >5</Menu.Item>
-      <Menu.Item id="condition" >{description}</Menu.Item>
-      <Menu.Item id="wind" >25 km</Menu.Item>
-      <Menu.Item id="timezone" >GMT+2</Menu.Item>
-    </Menu>
-  </Segment>
-
-)
-}
+  return (
+    <Segment>
+      <Menu id="weather-header">
+        <Menu.Item id="city">{city}</Menu.Item>
+        <Menu.Item id="temperature">{celsius}°C</Menu.Item>
+        <Menu.Item id="condition">{weather}</Menu.Item>
+      </Menu>
+    </Segment>
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
-    localCity: state.localCity
-  }
-}
+    localCity: state.localCity,
+    lat: state.lat,
+    long: state.long,
+  };
+};
 
-export default connect(mapStateToProps)(WeatherComponent)
+export default connect(mapStateToProps)(WeatherComponent);
