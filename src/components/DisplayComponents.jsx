@@ -14,7 +14,7 @@ import nasa from "../assets/nasa.png";
 import oil from "../assets/oil.png";
 import spacex from "../assets/spacex.png";
 
-const DisplayComponents = (props) => {
+const DisplayComponents = props => {
   props.fetchArticles();
 
   return (

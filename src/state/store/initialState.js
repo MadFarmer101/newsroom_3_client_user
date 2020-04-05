@@ -11,7 +11,12 @@ const initialState = {
   showLoginForm: false,
   welcomeMessage: "",
   showSignUpForm: false,
-  session: { edition: undefined }
+  session: { edition: undefined },
+  city: undefined,
+  weather: undefined,
+  temp: undefined,
+  weatherIcon: undefined
+ 
 };
 
 export default initialState;
