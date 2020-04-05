@@ -62,7 +62,7 @@ const SignUpForm = props => {
             placeholder="Confirm Password"
           />
         </div>
-        <button class="ui button" id="signup-button" type="signup">
+        <button id="sign-up-button"class="ui blue inverted button" type="submit">
           Sign Up
         </button>
       </form>

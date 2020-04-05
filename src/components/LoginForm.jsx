@@ -58,7 +58,7 @@ const LoginForm = props => {
           placeholder="Password"
         />
         </div>
-        <button  class="ui button" id="submit-button" type="submit">
+        <button  class="ui dark blue inverted button"  id="submit-button" type="submit">
           {t('Sign in')}{" "}
         </button>
       </form>

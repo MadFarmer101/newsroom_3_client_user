@@ -27,8 +27,8 @@ describe("Visitor can read", () => {
     });
     cy.get("#single-article").should("contain", "This is a smashing title");
     cy.get('img').should('exist')
-    cy.get("h5").should("contain", "And this is an awesome snippet");
-    cy.get("p").should("contain", "And this is the best content you ever read");
+    cy.get("#snippet").should("contain", "And this is an awesome snippet");
+    cy.get("#content").should("contain", "And this is the best content you ever read");
     cy.get("#article-list").should("not.exist");
   });
   it("a premium article", () => {
@@ -38,11 +38,11 @@ describe("Visitor can read", () => {
     });
     cy.get("#single-article").should("contain", "Zero infected on Mars");
     cy.get("img").should("exist");
-    cy.get("h5").should(
+    cy.get("#snippet").should(
       "contain",
       "Mars becomes more and more desirable as Earth is struggling with Corona Virus"
     );
-    cy.get("p").should("contain", "This is some content...");
+    cy.get("#content").should("contain", "This is some content...");
     cy.get("#article-list").should("not.exist");
   });
 
@@ -61,8 +61,8 @@ describe("Visitor can read", () => {
     });
     cy.get("#single-article").should("contain", "This is a smashing title");
     cy.get("img").should("exist");
-    cy.get("h5").should("contain", "And this is an awesome snippet");
-    cy.get("p").should("contain", "And this is the best content you ever read");
+    cy.get("#snippet").should("contain", "And this is an awesome snippet");
+    cy.get("#content").should("contain", "And this is the best content you ever read");
     cy.get("#article-list").should("not.exist");
     cy.get("#home-button").click();
     cy.get("#article-list").within(() => {
@@ -71,12 +71,12 @@ describe("Visitor can read", () => {
     });
     cy.get("#single-article").should("contain", "Zero infected on Mars");
     cy.get("img").should("exist");
-    cy.get("h5").should(
+    cy.get("#snippet").should(
       "contain",
       "Mars becomes more and more desirable as Earth is struggling with Corona Virus"
     );
 
-    cy.get("p").should("contain", "This is some content...");
+    cy.get("#content").should("contain", "This is some content...");
     cy.get("#article-list").should("not.exist");
   });
 
@@ -95,8 +95,8 @@ describe("Visitor can read", () => {
     });
     cy.get("#single-article").should("contain", "This is a smashing title");
     cy.get("img").should("exist");
-    cy.get("h5").should("contain", "And this is an awesome snippet");
-    cy.get("p").should("contain", "And this is the best content you ever read");
+    cy.get("#snippet").should("contain", "And this is an awesome snippet");
+    cy.get("#content").should("contain", "And this is the best content you ever read");
     cy.get("#article-list").should("not.exist");
     cy.get("#home-button").click();
 
@@ -106,12 +106,12 @@ describe("Visitor can read", () => {
     });
     cy.get("#single-article").should("contain", "Zero infected on Mars");
     cy.get("img").should("exist");
-    cy.get("h5").should(
+    cy.get("#snippet").should(
       "contain",
       "Mars becomes more and more desirable as Earth is struggling with Corona Virus"
     );
 
-    cy.get("p").should(
+    cy.get("#content").should(
       "contain",
       "This is some content repeated -This is some content repeated -This is some content repeated. And if you have read this far there is some more content coming your way. And if you dont want to continue reading you should have not bought that subscription"
     );
