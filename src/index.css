@@ -1,12 +1,12 @@
 #signup-button {
   position: absolute;
-  left: 75rem;
+  left: 70rem;
   bottom: 1.5rem;
 }
 
 #login-button {
   position: absolute;
-  left: 80rem;
+  left: 78rem;
   bottom: 1.5rem;
 }
 
@@ -22,7 +22,7 @@
 }
 
 #languages {
-  left: 51rem;
+  left: 52rem;
   bottom: 0.25rem;
 }
 
