@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Segment } from "semantic-ui-react";
+import { Menu, Segment, Grid } from "semantic-ui-react";
 import { useSelector } from "react-redux";
 import { connect } from "react-redux";
 import {
@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import logo from "../assets/logo.png";
+import WeatherComponent from './WeatherComponent'
 
 const CategoryHeader = (props) => {
   const { t } = useTranslation();
@@ -74,7 +75,15 @@ const CategoryHeader = (props) => {
 
   return (
     <>
-      <img id="logo" src={logo} alt="logo" />
+      <div className='ui stackable two column grid'>
+        <div className='column'>
+          <img id="logo" src={logo} alt="logo" />
+        </div>
+        <div className='column'>
+          <WeatherComponent />
+        </div>
+      </div>
+
       <Segment inverted>
         <Menu id="category-header" inverted pointing secondary>
           <Menu.Item
