@@ -84,7 +84,8 @@ const rootReducer = (state = initialState, action) => {
           ...state,
           city: action.payload.city,
           weather: action.payload.weather,
-          temp: action.payload.temp
+          temp: action.payload.temp,
+          weatherIcon: action.payload.weatherIcon
         };
 
     default:

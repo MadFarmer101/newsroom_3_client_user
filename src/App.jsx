@@ -29,12 +29,15 @@ const App = (props) => {
         type: SET_CURRENT_SESSION,
         payload: { session: { edition: currentSession.data.session.edition } },
       });
+      debugger
       dispatch({
         type: SET_WEATHER,
         payload: {
           city: response.data.name,
           weather: response.data.weather[0].description,
-          temp: response.data.main.temp
+          temp: response.data.main.temp,
+          weatherIcon : response.data.weather[0].icon
+          
         },
       });
     });

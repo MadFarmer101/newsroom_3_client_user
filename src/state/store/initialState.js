@@ -14,7 +14,8 @@ const initialState = {
   session: { edition: undefined },
   city: undefined,
   weather: undefined,
-  temp: undefined
+  temp: undefined,
+  weatherIcon: undefined
  
 };
 

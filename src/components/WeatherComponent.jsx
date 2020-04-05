@@ -6,6 +6,8 @@ const WeatherComponent = props => {
   let city = useSelector((state) => state.city);
   let weather = useSelector((state) => state.weather);
   let temp = useSelector((state) => state.temp);
+  let weatherIcon = useSelector((state) => state.weatherIcon );
+  debugger
 
   let celsius = (parseFloat(temp - 273.15).toFixed(1))
 
@@ -15,6 +17,7 @@ const WeatherComponent = props => {
         <Menu.Item id="city">{city}</Menu.Item>
         <Menu.Item id="temperature">{celsius}°C</Menu.Item>
         <Menu.Item id="condition">{weather}</Menu.Item>
+        <img src={`http://openweathermap.org/img/wn/${weatherIcon}@2x.png`}/>
       </Menu>
     </Segment>
   );
