@@ -13,7 +13,7 @@
 ## The code   
 This project is the visitor interface of the Newspaper Mars Times. Here the visitor can read free articles or sign up and buy a subsciption to aslo read premium articles. 
 The articles have been created and published from our Admin interface and are stored in our API.  
-The master repository for the visitors interface, mobile app and API can be found here:
+The master repository for the admin interface, mobile app and API can be found here:
 * [API](https://github.com/CraftAcademy/newsroom_3_api.git)
 * [Admin](https://github.com/CraftAcademy/newsroom_3_client_admin.git)
 * [Mobile](https://github.com/CraftAcademy/newsroom_3_mobile_app.git)
@@ -35,7 +35,7 @@ The master repository for the visitors interface, mobile app and API can be foun
 
 ### Setup   
 To test this application, fork the repo to your own GitHub account and clone it to your local workspace. </br>
-*Note:*Be sure to set up backend api first (noted above), in order to fully interact with the application. 
+*Note:**Note:*All our clients are running on our deployed API, even when they are being used on a local server. 
 Install all of the dependencies:    
 ```
 $ yarn install
@@ -43,10 +43,6 @@ $ yarn install
 Start cypress and run the feature tests:  
 ```
 $ yarn run cy:open
-```
-Start the backend api (if already configured) in a separate terminal (only run this command for the Rails application):
-```
-$ rails s
 ```
 Start the React application and run it on your local host:
 ```
@@ -71,3 +67,4 @@ $ yarn start
 - [Oliver Ochman](https://github.com/oliverochman/) for helping us understanding how to send credentials with the headers for request to the API.
 - [Thomas Ochman](https://github.com/tochman/) for helping us implement with Stripe. 
 - [Faraz Naeem](https://github.com/faraznaeem) for demonstrating a tough client and pushing us forward
+- Big thanks to the others students in our cohort at Craft Academy. We have been stealing some of your code shamelessly, you have been great rubber ducks and our team internal competition in highest coverage has really helped us implement better skills in RSpec.  
