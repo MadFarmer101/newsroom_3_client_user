@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import CategoryHeader from "./components/CategoryHeader";
 import DisplayComponents from "./components/DisplayComponents";
+import WeatherComponent from "./components/WeatherComponent"
 import axios from 'axios'
 
 const App = props => {
@@ -13,10 +14,10 @@ const App = props => {
       dispatch({ type: "SET_CURRENT_SESSION", payload: currentSession.data })
     });
   }, []);
-
   return (
     <>
       <CategoryHeader />
+      <WeatherComponent />
       <Switch>
         <Route exact path="/" component={DisplayComponents}></Route>
         <Route

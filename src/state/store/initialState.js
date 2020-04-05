@@ -11,7 +11,11 @@ const initialState = {
   showLoginForm: false,
   welcomeMessage: "",
   showSignUpForm: false,
-  session: { edition: undefined }
+  session: { edition: undefined },
+  localCity: "Gothenburg",
+  localtemperature: "",
+  latitude: 11.97,
+  longitude: 57.7
 };
 
 export default initialState;

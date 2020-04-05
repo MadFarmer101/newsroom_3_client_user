@@ -8,6 +8,7 @@ import SubscriptionForm from "./SubscriptionForm";
 import { Elements } from "react-stripe-elements";
 import LoginForm from "../components/LoginForm";
 import SignUpForm from "../components/SignUpForm";
+import { weatherData } from "../modules/weatherData"
 
 
 const DisplayComponents = props => {
