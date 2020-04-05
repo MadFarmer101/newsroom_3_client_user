@@ -2,6 +2,8 @@ import React from "react";
 import auth from "../modules/auth";
 import { connect } from "react-redux";
 import { AUTHENTICATE } from "../state/actions/actionTypes";
+import { Form } from "semantic-ui-react";
+
 
 const SignUpForm = props => {
   const onSignup = async e => {
@@ -39,7 +41,7 @@ const SignUpForm = props => {
     );
   } else {
     signup = (
-      <form class="ui form" id="sign-up-form" onSubmit={onSignup}>
+      <Form class="ui form" id="sign-up-form" onSubmit={onSignup}>
         <div class="field">
           <label>Email</label>
           <input id="email" name="email" type="email" placeholder="Email" />
@@ -65,7 +67,7 @@ const SignUpForm = props => {
         <button id="sign-up-button"class="ui blue inverted button" type="submit">
           Sign Up
         </button>
-      </form>
+      </Form>
     );
   }
 

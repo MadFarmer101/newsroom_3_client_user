@@ -1,30 +1,30 @@
-#signup-button {
+/* #signup-button {
   position: absolute;
   left: 70rem;
   bottom: 1.5rem;
-}
+} */
 
-#login-button {
+/* #login-button {
   position: absolute;
   left: 78rem;
   bottom: 1.5rem;
-}
+} */
 
-#logout-button {
+/* #logout-button {
   position: absolute;
   left: 79rem;
   bottom: 1.5rem;
-}
+} */
 
 #editionlink {
   left: 55rem;
   bottom: 0.2rem;
 }
-
+/* 
 #languages {
   left: 52rem;
   bottom: 0.25rem;
-}
+} */
 
 #login-form {
   position: fixed;
@@ -53,7 +53,7 @@
 #sign-up-form {
   position: absolute;
   width: 250px;
-  left: 80.5rem
+  left: 85rem
 }
 
 #signup-article-button {
@@ -64,10 +64,10 @@
   margin-left: 18rem;
 }
 
-#logo {
+/* #logo {
   width: 600px;
   margin-left: 10rem;
-}
+} */
 
 #mars {
   width: 180px;

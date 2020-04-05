@@ -11,11 +11,12 @@ const WeatherComponent = props => {
   let celsius = (parseFloat(temp - 273.15).toFixed(1))
 
   return (
-      <Menu id="weather-header">
+      <Menu inverted borderless fluid id="weather-header" >
         <Menu.Item id="city">{city}</Menu.Item>
         <Menu.Item id="temperature">{celsius}°C</Menu.Item>
         <Menu.Item id="condition">{weather}</Menu.Item>
-        <img src={`http://openweathermap.org/img/wn/${weatherIcon}@2x.png`} />
+        <Menu.Item><img src={`http://openweathermap.org/img/wn/${weatherIcon}.png`} /></Menu.Item> 
+
       </Menu>
   );
 };

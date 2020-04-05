@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Segment, Grid } from "semantic-ui-react";
+import { Menu, Segment, Image, Container } from "semantic-ui-react";
 import { useSelector } from "react-redux";
 import { connect } from "react-redux";
 import {
@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import logo from "../assets/logo.png";
 import WeatherComponent from './WeatherComponent'
+
 
 const CategoryHeader = (props) => {
   const { t } = useTranslation();
@@ -31,7 +32,7 @@ const CategoryHeader = (props) => {
   let switchLoginAndLogOut =
     currentUser.role === "reg_user" || currentUser.role === "subscriber" ? (
       <>
-        <button
+        <Menu.Item
           class="ui secondary button"
           id="logout-button"
           onClick={() =>
@@ -42,47 +43,54 @@ const CategoryHeader = (props) => {
           }
         >
           {t("Log out")}
-        </button>
+        </Menu.Item>
       </>
     ) : (
-      <>
-        <button
-          class="ui secondary button"
-          id="signup-button"
-          onClick={() =>
-            props.dispatch({
-              type: SHOW_SIGN_UP_FORM,
-              payload: { showSignUpForm: true, showLoginForm: false },
-            })
-          }
-        >
-          {t("Sign up")}
-        </button>
-        <button
-          class="ui secondary button"
-          id="login-button"
-          onClick={() =>
-            props.dispatch({
-              type: SHOW_LOGIN_FORM,
-              payload: { showLoginForm: true, showSignUpForm: false },
-            })
-          }
-        >
-          {t("Login")}
-        </button>
-      </>
-    );
-
+        <>
+          <Menu.Item
+            class="ui secondary button"
+            id="signup-button"
+            onClick={() =>
+              props.dispatch({
+                type: SHOW_SIGN_UP_FORM,
+                payload: { showSignUpForm: true, showLoginForm: false },
+              })
+            }
+          >
+            {t("Sign up")}
+          </Menu.Item>
+          <Menu.Item
+            class="ui secondary button"
+            id="login-button"
+            onClick={() =>
+              props.dispatch({
+                type: SHOW_LOGIN_FORM,
+                payload: { showLoginForm: true, showSignUpForm: false },
+              })
+            }
+          >
+            {t("Login")}
+          </Menu.Item>
+        </>
+      );
   return (
-    <>
-      <div className='ui stackable two column grid'>
-        <div className='column'>
-          <img id="logo" src={logo} alt="logo" />
-        </div>
-        <div className='column'>
+    <Container>
+       <div className='column'>
           <WeatherComponent />
+
         </div>
-      </div>
+        <div className='column'>
+        <Image id="logo" src={logo} alt="logo" />
+        {edition && `${edition} Edition`}
+
+         
+          
+          
+     
+        </div>
+    
+    
+
 
       <Segment inverted>
         <Menu id="category-header" inverted pointing secondary>
@@ -146,27 +154,19 @@ const CategoryHeader = (props) => {
           >
             {t("Culture")}
           </Menu.Item>
-
-          {switchLoginAndLogOut}
-          <Menu.Item id="languages" onClick={() => i18n.changeLanguage("en")}>
-            EN
+      
+          
+            {switchLoginAndLogOut}
+            <Menu.Item id="languages" onClick={() => i18n.changeLanguage("en")}>
+              EN
           </Menu.Item>
-          <Menu.Item id="languages" onClick={() => i18n.changeLanguage("sv")}>
-            SV
+            <Menu.Item id="languages" onClick={() => i18n.changeLanguage("sv")}>
+              SV
           </Menu.Item>
-          <Menu.Item
-            name="edition"
-            id="editionlink"
-            as={Link}
-            to={{ pathname: "/edition" }}
-            active={props.activeItem === "edition"}
-            onClick={handleItemClick}
-          >
-            {edition && `${edition} Edition`}
-          </Menu.Item>
+          
         </Menu>
       </Segment>
-    </>
+    </Container>
   );
 };
 
