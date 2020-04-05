@@ -1,4 +1,6 @@
 import axios from "axios";
+import {connect} from 'react-redux'
+
 
 const weatherData = async coords => {
   try {
@@ -6,10 +8,12 @@ const weatherData = async coords => {
     let response = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${coords[0]}&lon=${coords[1]}&APPID=${token}`
     );
+    debugger
     return response.data;
   } catch (error) {
     return error;
   }
 };
 
-export { weatherData };
+
+export default connect()(weatherData);

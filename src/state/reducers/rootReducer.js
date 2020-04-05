@@ -80,12 +80,6 @@ const rootReducer = (state = initialState, action) => {
           ...action.payload
         }
 
-      case actionTypes.SET_CURRENT_LOCATION:
-        return {
-          ...state, 
-          ...action.payload
-        }
-
     default:
       return state;
   }
