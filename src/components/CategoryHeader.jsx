@@ -10,7 +10,9 @@ import {
 } from "../state/actions/actionTypes";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import i18n from '../i18n'
+import i18n from '../i18n';
+import  logo from "../assets/logo.png";
+import mars from "../assets/mars.png"
 
 
 
@@ -33,7 +35,7 @@ const CategoryHeader = props => {
       <>
         <button
           class="ui secondary button"
-          id="accesslink"
+          id="logout-button"
           onClick={() =>
             props.dispatch({
               type: LOGOUT,
@@ -48,7 +50,7 @@ const CategoryHeader = props => {
         <>
           <button
             class="ui secondary button"
-            id="accesslink"
+            id="signup-button"
             onClick={() =>
               props.dispatch({
                 type: SHOW_SIGN_UP_FORM,
@@ -60,7 +62,7 @@ const CategoryHeader = props => {
           </button>
           <button
             class="ui secondary button"
-            id="acesslink"
+            id="login-button"
             onClick={() =>
               props.dispatch({
                 type: SHOW_LOGIN_FORM,
@@ -74,6 +76,9 @@ const CategoryHeader = props => {
       );
 
   return (
+    <>
+    <img id="logo" src={logo} alt="logo" />
+    <img id="mars" src={mars} alt="mars" />
     <Segment inverted>
       <Menu id="category-header" inverted pointing secondary>
         <Menu.Item
@@ -136,8 +141,8 @@ const CategoryHeader = props => {
         </Menu.Item>
     
         {switchLoginAndLogOut}
-        <Menu.Item onClick={() => i18n.changeLanguage('en')}>EN</Menu.Item>
-        <Menu.Item onClick={() => i18n.changeLanguage('sv')}>SV</Menu.Item>
+        <Menu.Item id="languages" onClick={() => i18n.changeLanguage('en')}>EN</Menu.Item>
+        <Menu.Item id="languages" onClick={() => i18n.changeLanguage('sv')}>SV</Menu.Item>
         <Menu.Item
           name="edition"
           id="editionlink"
@@ -151,6 +156,7 @@ const CategoryHeader = props => {
 
       </Menu>
     </Segment>
+    </>
   );
 };
 
