@@ -132,9 +132,15 @@ body {
   font-size: 120%;
 }
 
-#politics, #latest_news, #sports, #tech, #homee, #culture{
+#politics, #latest_news, #sports, #tech, #culture{
   font-weight: bold !important;
   color: white !important;
   font-size: 150% ;
   
+}
+
+.homee {
+  font-weight: bold !important;
+  color: white !important;
+  font-size: 150% ;
 }
