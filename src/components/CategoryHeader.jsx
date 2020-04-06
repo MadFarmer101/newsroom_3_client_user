@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Segment } from "semantic-ui-react";
+import { Menu, Segment, Image, Container } from "semantic-ui-react";
 import { useSelector } from "react-redux";
 import { connect } from "react-redux";
 import {
@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import logo from "../assets/logo.png";
+import WeatherComponent from "./WeatherComponent";
 
 const CategoryHeader = (props) => {
   const { t } = useTranslation();
@@ -30,7 +31,7 @@ const CategoryHeader = (props) => {
   let switchLoginAndLogOut =
     currentUser.role === "reg_user" || currentUser.role === "subscriber" ? (
       <>
-        <button
+        <Menu.Item
           class="ui secondary button"
           id="logout-button"
           onClick={() =>
@@ -41,11 +42,11 @@ const CategoryHeader = (props) => {
           }
         >
           {t("Log out")}
-        </button>
+        </Menu.Item>
       </>
     ) : (
       <>
-        <button
+        <Menu.Item
           class="ui secondary button"
           id="signup-button"
           onClick={() =>
@@ -56,8 +57,8 @@ const CategoryHeader = (props) => {
           }
         >
           {t("Sign up")}
-        </button>
-        <button
+        </Menu.Item>
+        <Menu.Item
           class="ui secondary button"
           id="login-button"
           onClick={() =>
@@ -68,18 +69,24 @@ const CategoryHeader = (props) => {
           }
         >
           {t("Login")}
-        </button>
+        </Menu.Item>
       </>
     );
-
   return (
-    <>
-      <img id="logo" src={logo} alt="logo" />
+    <Container>
+      <div className="column">
+        <WeatherComponent />
+      </div>
+      <div className="column">
+        <Image id="logo" src={logo} alt="logo" />
+        {edition && `${edition} Edition`}
+      </div>
+
       <Segment inverted>
         <Menu id="category-header" inverted pointing secondary>
           <Menu.Item
             name="home"
-            id=""
+            id="homee"
             as={Link}
             to={{ pathname: "/" }}
             active={props.activeItem === "all"}
@@ -145,19 +152,9 @@ const CategoryHeader = (props) => {
           <Menu.Item id="languages" onClick={() => i18n.changeLanguage("sv")}>
             SV
           </Menu.Item>
-          <Menu.Item
-            name="edition"
-            id="editionlink"
-            as={Link}
-            to={{ pathname: "/edition" }}
-            active={props.activeItem === "edition"}
-            onClick={handleItemClick}
-          >
-            {edition && `${edition} Edition`}
-          </Menu.Item>
         </Menu>
       </Segment>
-    </>
+    </Container>
   );
 };
 

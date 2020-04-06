@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const FullContent = props => {
+const FullContent = (props) => {
   let article = props.singleArticle;
   return (
     <>
@@ -10,9 +10,9 @@ const FullContent = props => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    singleArticle: state.singleArticle
+    singleArticle: state.singleArticle,
   };
 };
 
