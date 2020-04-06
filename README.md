@@ -1,68 +1,70 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Authors
+[Emma-Maria Thalen](https://github.com/emtalen)  
+[Philip Gaunitz](https://github.com/pgauntiz)  
+[Carlos Delgado](https://github.com/Carltesio)  
+[Janko Radakovic](https://github.com/MadFarmer101)  
+[Lautaro Parra](https://github.com/dernathul) 
 
-## Available Scripts
+## Built with
+**Front End:** React v.16.12.0 | CSS  
+**Testing framework:** Cypress  
+**Deployed at:** [Netlify](https://themarstimes.netlify.com/).
 
-In the project directory, you can run:
+## The code   
+This project is the visitor interface of the Newspaper Mars Times. Here the visitor can read free articles or sign up and buy a subsciption to aslo read premium articles. 
+The articles have been created and published from our Admin interface and are stored in our API.  
+The master repository for the admin interface, mobile app and API can be found here:
+* [API](https://github.com/CraftAcademy/newsroom_3_api.git)
+* [Admin](https://github.com/CraftAcademy/newsroom_3_client_admin.git)
+* [Mobile](https://github.com/CraftAcademy/newsroom_3_mobile_app.git)
 
-### `yarn start`
+## Getting started
+### Dependencies  
+* Yarn
+* React
+* Cypress
+* Axios
+* Semantic-ui-react / Semantic-ui-css
+* React-images-uploading
+* React-redux
+* Redux
+* Redux-thunk
+* J-tockauth
+* React-i18next
+* React-stripe-elements
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Setup   
+To test this application, fork the repo to your own GitHub account and clone it to your local workspace. </br>
+*Note:**Note:*All our clients are running on our deployed API, even when they are being used on a local server. 
+Install all of the dependencies:    
+```
+$ yarn install
+```  
+Start cypress and run the feature tests:  
+```
+$ yarn run cy:open
+```
+Start the React application and run it on your local host:
+```
+$ yarn start
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Login credentials
+- Regular user: email: user@mail.com password: password
+- Subscriber: email: subscriber@mail.com password: password
 
-### `yarn test`
+## Updates/Improvements   
+- That the user can choose between different subsciption plans
+- That the user signs up and an account is being created while buying a subsciption
+- Add more personal features, such as a profile page 
+- Create functionality to comment and rate on articles
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## License  
+[MIT-license](https://en.wikipedia.org/wiki/MIT_License)
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Acknowledgement  
+- Material provided by [Craft Academy](https://craftacademy.se)
+- [Oliver Ochman](https://github.com/oliverochman/) for helping us understanding how to send credentials with the headers for request to the API.
+- [Thomas Ochman](https://github.com/tochman/) for helping us implement with Stripe. 
+- [Faraz Naeem](https://github.com/faraznaeem) for demonstrating a tough client and pushing us forward
+- Big thanks to the others students in our cohort at Craft Academy. We have been stealing some of your code shamelessly, you have been great rubber ducks and our team internal competition in highest coverage has really helped us implement better skills in RSpec.  
