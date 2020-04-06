@@ -20,41 +20,35 @@ const DisplayArticles = (props) => {
 
   let articleDisplay = articles.map((article) => {
     return (
-      
-        <div
-          id={`article-${article.id}`}
-          key={article.id}
-        ><div class="ui two cards">
+      <div id={`article-${article.id}`} key={article.id}>
+        <div class="ui two cards">
           <div id="cards" class="ui card">
-          <div class="image">
-            <img src={article.image} alt={`${article.title}-image`} />
-          </div>
-          <div class="content">
-          <div class="header" id="title">{article.title}</div>
-          <div class="meta" id="snippet">{article.snippet}</div>
-          <button class="ui blue inverted button"
-            id="open-article"
-            onClick={() => showArticle(article.id)}
-            key={article.id}
-          >
-            {" "}
-            {t("Read more")}
-          </button>
-          </div>
+            <div class="image">
+              <img src={article.image} alt={`${article.title}-image`} />
+            </div>
+            <div class="content">
+              <div class="header" id="title">
+                {article.title}
+              </div>
+              <div class="meta" id="snippet">
+                {article.snippet}
+              </div>
+              <button
+                class="ui blue inverted button"
+                id="open-article"
+                onClick={() => showArticle(article.id)}
+                key={article.id}
+              >
+                {" "}
+                {t("Read more")}
+              </button>
+            </div>
           </div>
         </div>
-        </div>
-    )
-  })
-  return (
-    // <div class="ui main container">
-  
-     
-      <div id="article-list">{articleDisplay}</div>
-   
-  
-    // </div>
-  );
+      </div>
+    );
+  });
+  return <div id="article-list">{articleDisplay}</div>;
 };
 
 const mapStateToProps = (state) => {

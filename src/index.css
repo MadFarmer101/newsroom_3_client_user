@@ -5,9 +5,7 @@
 } */
 
 /* #login-button {
-  position: absolute;
-  left: 78rem;
-  bottom: 1.5rem;
+  position: right;
 } */
 
 /* #logout-button {
@@ -29,16 +27,14 @@
 #login-form {
   position: fixed;
   width: 25%;
-  margin-left: 73.5%;
+  margin-left: 70.5%;
 }
 
 #logged-in-message {
-  position: absolute;
-  margin-top: -4.75rem;
-  color: white;
-  font-variant: caps;
-  font-size: 120%;
-  left: 65rem;
+  position: fixed;
+  width: 25%;
+  margin-left: 70.5%;
+  font-size: 200%;
 }
 
 #signed-up-message {
@@ -53,7 +49,7 @@
 #sign-up-form {
   position: absolute;
   width: 250px;
-  left: 85rem
+  left: 95rem
 }
 
 #signup-article-button {
@@ -135,3 +131,8 @@ body {
 #link {
   font-size: 120%;
 }
+
+/* #culture, #politics {
+  
+  ;
+} */
