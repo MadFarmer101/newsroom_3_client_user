@@ -24,7 +24,7 @@ const DisplaySingleArticle = (props) => {
         <div id="cards" class="ui card">
           <div class="image">
             {" "}
-            <img src={article.image} alt={`${article.title}-image`} />{" "}
+            <img src={article.image} alt={`${article.title}-image`}  />{" "}
           </div>
           <div class="content">
             <div class="header" id="title" key={article.title}>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Segment, Grid } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 import { connect, useSelector } from "react-redux";
 
 const WeatherComponent = (props) => {
@@ -16,7 +16,7 @@ const WeatherComponent = (props) => {
       <Menu.Item id="temperature">{celsius}°C</Menu.Item>
       <Menu.Item id="condition">{weather}</Menu.Item>
       <Menu.Item>
-        <img src={`http://openweathermap.org/img/wn/${weatherIcon}.png`} />
+        <img src={`http://openweathermap.org/img/wn/${weatherIcon}.png`} alt="icon"/>
       </Menu.Item>
     </Menu>
   );

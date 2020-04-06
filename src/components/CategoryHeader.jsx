@@ -87,7 +87,7 @@ const CategoryHeader = (props) => {
           <Menu.Item
             name="home"
             id=''
-            className="homee"
+            className="home"
             as={Link}
             to={{ pathname: "/" }}
             active={props.activeItem === "all"}

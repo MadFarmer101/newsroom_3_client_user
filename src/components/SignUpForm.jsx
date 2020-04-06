@@ -2,7 +2,7 @@ import React from "react";
 import auth from "../modules/auth";
 import { connect } from "react-redux";
 import { AUTHENTICATE } from "../state/actions/actionTypes";
-import { Form } from "semantic-ui-react";
+import { Form, Button } from "semantic-ui-react";
 
 const SignUpForm = (props) => {
   const onSignup = async (e) => {
@@ -49,11 +49,11 @@ const SignUpForm = (props) => {
         id="sign-up-form"
         onSubmit={onSignup}
       >
-        <div class="field">
+        <Form.Field>
           <label>Email</label>
           <input id="email" name="email" type="email" placeholder="Email" />
-        </div>
-        <div class="field">
+        </Form.Field>
+        <Form.Field>
           <label>Password</label>
           <input
             id="password"
@@ -61,8 +61,8 @@ const SignUpForm = (props) => {
             type="password"
             placeholder="Password"
           />
-        </div>
-        <div class="field">
+        </Form.Field>
+        <Form.Field>
           <label>Confirm Password</label>
           <input
             id="passwordconfirmation"
@@ -70,14 +70,14 @@ const SignUpForm = (props) => {
             type="password"
             placeholder="Confirm Password"
           />
-        </div>
-        <button
+        </Form.Field>
+        <Button
           id="sign-up-button"
           class="ui blue inverted button"
           type="submit"
         >
           Sign Up
-        </button>
+        </Button>
       </Form>
     );
   }

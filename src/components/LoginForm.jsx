@@ -3,6 +3,7 @@ import auth from "../modules/auth";
 import { AUTHENTICATE } from "../state/actions/actionTypes";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { Button, Form } from "semantic-ui-react";
 
 const LoginForm = (props) => {
   const { t } = useTranslation();
@@ -44,12 +45,12 @@ const LoginForm = (props) => {
     );
   } else {
     login = (
-      <form class="ui form" id="login-form" onSubmit={onLogin}>
-        <div class="field">
+      <Form class="ui form" id="login-form" onSubmit={onLogin}>
+        <Form.Field>
           <label>Email</label>
           <input id="email" name="email" placeholder="Email" />
-        </div>
-        <div class="field">
+        </Form.Field>
+        <Form.Field>
           <label>{t("Password")}</label>
           <input
             id="password"
@@ -57,15 +58,15 @@ const LoginForm = (props) => {
             type="password"
             placeholder="Password"
           />
-        </div>
-        <button
+        </Form.Field>
+        <Button
           class="ui dark blue inverted button"
           id="submit-button"
           type="submit"
         >
           {t("Sign in")}{" "}
-        </button>
-      </form>
+        </Button>
+      </Form>
     );
   }
 
