@@ -12,8 +12,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import logo from "../assets/logo.png";
-import WeatherComponent from './WeatherComponent'
-
+import WeatherComponent from "./WeatherComponent";
 
 const CategoryHeader = (props) => {
   const { t } = useTranslation();
@@ -46,51 +45,42 @@ const CategoryHeader = (props) => {
         </Menu.Item>
       </>
     ) : (
-        <>
-          <Menu.Item
-            class="ui secondary button"
-            id="signup-button"
-            onClick={() =>
-              props.dispatch({
-                type: SHOW_SIGN_UP_FORM,
-                payload: { showSignUpForm: true, showLoginForm: false },
-              })
-            }
-          >
-            {t("Sign up")}
-          </Menu.Item>
-          <Menu.Item
-            class="ui secondary button"
-            id="login-button"
-            onClick={() =>
-              props.dispatch({
-                type: SHOW_LOGIN_FORM,
-                payload: { showLoginForm: true, showSignUpForm: false },
-              })
-            }
-          >
-            {t("Login")}
-          </Menu.Item>
-        </>
-      );
+      <>
+        <Menu.Item
+          class="ui secondary button"
+          id="signup-button"
+          onClick={() =>
+            props.dispatch({
+              type: SHOW_SIGN_UP_FORM,
+              payload: { showSignUpForm: true, showLoginForm: false },
+            })
+          }
+        >
+          {t("Sign up")}
+        </Menu.Item>
+        <Menu.Item
+          class="ui secondary button"
+          id="login-button"
+          onClick={() =>
+            props.dispatch({
+              type: SHOW_LOGIN_FORM,
+              payload: { showLoginForm: true, showSignUpForm: false },
+            })
+          }
+        >
+          {t("Login")}
+        </Menu.Item>
+      </>
+    );
   return (
     <Container>
-       <div className='column'>
-          <WeatherComponent />
-
-        </div>
-        <div className='column'>
+      <div className="column">
+        <WeatherComponent />
+      </div>
+      <div className="column">
         <Image id="logo" src={logo} alt="logo" />
         {edition && `${edition} Edition`}
-
-         
-          
-          
-     
-        </div>
-    
-    
-
+      </div>
 
       <Segment inverted>
         <Menu id="category-header" inverted pointing secondary>
@@ -134,7 +124,7 @@ const CategoryHeader = (props) => {
           >
             {t("Sports")}
           </Menu.Item>
-          <Menu.Item 
+          <Menu.Item
             name="politics"
             id="politics"
             as={Link}
@@ -154,16 +144,14 @@ const CategoryHeader = (props) => {
           >
             {t("Culture")}
           </Menu.Item>
-      
-          
-            {switchLoginAndLogOut}
-            <Menu.Item id="languages" onClick={() => i18n.changeLanguage("en")}>
-              EN
+
+          {switchLoginAndLogOut}
+          <Menu.Item id="languages" onClick={() => i18n.changeLanguage("en")}>
+            EN
           </Menu.Item>
-            <Menu.Item id="languages" onClick={() => i18n.changeLanguage("sv")}>
-              SV
+          <Menu.Item id="languages" onClick={() => i18n.changeLanguage("sv")}>
+            SV
           </Menu.Item>
-          
         </Menu>
       </Segment>
     </Container>

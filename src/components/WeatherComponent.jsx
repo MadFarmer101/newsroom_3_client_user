@@ -2,22 +2,23 @@ import React from "react";
 import { Menu, Segment, Grid } from "semantic-ui-react";
 import { connect, useSelector } from "react-redux";
 
-const WeatherComponent = props => {
+const WeatherComponent = (props) => {
   let city = useSelector((state) => state.city);
   let weather = useSelector((state) => state.weather);
   let temp = useSelector((state) => state.temp);
-  let weatherIcon = useSelector((state) => state.weatherIcon );  
+  let weatherIcon = useSelector((state) => state.weatherIcon);
 
-  let celsius = (parseFloat(temp - 273.15).toFixed(1))
+  let celsius = parseFloat(temp - 273.15).toFixed(1);
 
   return (
-      <Menu inverted borderless fluid id="weather-header" >
-        <Menu.Item id="city">{city}</Menu.Item>
-        <Menu.Item id="temperature">{celsius}°C</Menu.Item>
-        <Menu.Item id="condition">{weather}</Menu.Item>
-        <Menu.Item><img src={`http://openweathermap.org/img/wn/${weatherIcon}.png`} /></Menu.Item> 
-
-      </Menu>
+    <Menu inverted borderless fluid id="weather-header">
+      <Menu.Item id="city">{city}</Menu.Item>
+      <Menu.Item id="temperature">{celsius}°C</Menu.Item>
+      <Menu.Item id="condition">{weather}</Menu.Item>
+      <Menu.Item>
+        <img src={`http://openweathermap.org/img/wn/${weatherIcon}.png`} />
+      </Menu.Item>
+    </Menu>
   );
 };
 
