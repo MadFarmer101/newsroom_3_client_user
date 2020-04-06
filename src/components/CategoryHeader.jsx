@@ -96,7 +96,7 @@ const CategoryHeader = (props) => {
         <Menu id="category-header" inverted pointing secondary>
           <Menu.Item
             name="home"
-            id=""
+            id="homee"
             as={Link}
             to={{ pathname: "/" }}
             active={props.activeItem === "all"}
@@ -134,7 +134,7 @@ const CategoryHeader = (props) => {
           >
             {t("Sports")}
           </Menu.Item>
-          <Menu.Item
+          <Menu.Item 
             name="politics"
             id="politics"
             as={Link}
