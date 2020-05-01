@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/332df0fa-ebcd-4b4d-b232-4a8c6312b2fc/deploy-status)](https://app.netlify.com/sites/themarstimes/deploys)
 ### Authors
 [Emma-Maria Thalen](https://github.com/emtalen)  
 [Philip Gaunitz](https://github.com/pgauntiz)  
