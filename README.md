@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/332df0fa-ebcd-4b4d-b232-4a8c6312b2fc/deploy-status)](https://app.netlify.com/sites/themarstimes/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/332df0fa-ebcd-4b4d-b232-4a8c6312b2fc/deploy-status)](https://app.netlify.com/sites/themarstimes/deploys)[![Build Status](https://semaphoreci.com/api/v1/carltesio/newsroom_3_client_user/branches/development/badge.svg)](https://semaphoreci.com/carltesio/newsroom_3_client_user)
 ### Authors
 [Emma-Maria Thalen](https://github.com/emtalen)  
 [Philip Gaunitz](https://github.com/pgauntiz)  
